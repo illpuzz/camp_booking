@@ -1,47 +1,66 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
-</script>
-
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
+  <div id="app">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-success">
+      <div class="container">
+        <router-link class="navbar-brand" to="/">營地評價系統</router-link>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <router-link class="nav-link" to="/">首頁</router-link>
+            </li>
+            <li class="nav-item">
+              <router-link class="nav-link" to="/reviews">評價列表</router-link>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
 
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-    </div>
-  </header>
+    <main class="container py-4">
+      <router-view />
+    </main>
 
-  <main>
-    <TheWelcome />
-  </main>
+    <footer class="bg-light py-4 mt-5">
+      <div class="container text-center">
+        <p class="mb-0 text-muted">© 2025 營地評價系統. 版權所有</p>
+      </div>
+    </footer>
+  </div>
 </template>
 
-<style scoped>
-header {
-  line-height: 1.5;
+<script>
+export default {
+  name: 'App'
+}
+</script>
+
+<style>
+#app {
+  font-family: 'Microsoft JhengHei', 'PingFang TC', '微軟正黑體', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #2c3e50;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
+main {
+  flex: 1;
 }
 
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
+.navbar-brand {
+  font-weight: bold;
+}
 
-  .logo {
-    margin: 0 2rem 0 0;
-  }
+.rating-star {
+  color: #FFD700;
+}
 
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
+.rating-star-empty {
+  color: #e0e0e0;
 }
 </style>

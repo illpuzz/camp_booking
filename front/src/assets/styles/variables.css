@@ -1,0 +1,16 @@
+/* src/assets/styles/variables.css */
+:root {
+    /* 淺草綠色調 */
+    --primary-color: #2ecc71;     /* 主要綠色 */
+    --light-green: #90EE90;       /* 淺綠 */
+    --soft-green: #98FB98;        /* 柔和綠 */
+    --mint-green: #E0F2E9;        /* 薄荷綠 */
+    
+    /* 中性色調 */
+    --text-color: #333;
+    --background-color: #f4f6f7;
+    --white: #ffffff;
+    
+    /* 漸層背景 */
+    --gradient-background: linear-gradient(135deg, var(--soft-green) 0%, var(--primary-color) 100%);
+  }
