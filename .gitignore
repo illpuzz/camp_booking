@@ -62,7 +62,3 @@ coverage
 *.sw?
 
 *.tsbuildinfo
-
-# img,db
-db/
-img/
