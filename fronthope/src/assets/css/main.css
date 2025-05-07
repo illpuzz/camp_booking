@@ -1,0 +1,238 @@
+/* main.css - 全局樣式檔案 */
+
+:root {
+  /* 主要顏色 - 森林綠色系 */
+  --forest-dark: #1E432E;
+  --forest-medium: #356648;
+  --forest-light: #5B8F6D;
+  --forest-ultralight: #E8F5E9;
+  
+  /* 輔助顏色 */
+  --accent-gold: #FFCB45;
+  --accent-orange: #FF7F50;
+  --accent-blue: #4285F4;
+  
+  /* 灰階顏色 */
+  --gray-100: #f8f9fa;
+  --gray-200: #e9ecef;
+  --gray-300: #dee2e6;
+  --gray-400: #ced4da;
+  --gray-500: #adb5bd;
+  --gray-600: #6c757d;
+  --gray-700: #495057;
+  --gray-800: #343a40;
+  --gray-900: #212529;
+  
+  /* 功能顏色 */
+  --success: #28a745;
+  --warning: #ffc107;
+  --danger: #dc3545;
+  --info: #17a2b8;
+  
+  /* 排版 */
+  --font-family-base: 'Noto Sans TC', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-size-base: 1rem;
+  --line-height-base: 1.5;
+  
+  /* 空間 */
+  --spacing-1: 0.25rem;
+  --spacing-2: 0.5rem;
+  --spacing-3: 1rem;
+  --spacing-4: 1.5rem;
+  --spacing-5: 3rem;
+  
+  /* 陰影 */
+  --shadow-sm: 0 .125rem .25rem rgba(0,0,0,.075);
+  --shadow: 0 .5rem 1rem rgba(0,0,0,.15);
+  --shadow-lg: 0 1rem 3rem rgba(0,0,0,.175);
+  
+  /* 圓角 */
+  --border-radius-sm: 0.25rem;
+  --border-radius: 0.5rem;
+  --border-radius-lg: 1rem;
+  
+  /* 過渡效果 */
+  --transition-base: all 0.3s ease;
+}
+
+/* 基礎樣式 */
+body {
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-base);
+  color: var(--gray-900);
+  background-color: var(--forest-ultralight);
+  margin: 0;
+  padding: 0;
+}
+
+/* 文字顏色輔助類 */
+.text-forest {
+  color: var(--forest-dark) !important;
+}
+
+.text-forest-medium {
+  color: var(--forest-medium) !important;
+}
+
+.text-forest-light {
+  color: var(--forest-light) !important;
+}
+
+/* 背景顏色輔助類 */
+.bg-forest {
+  background-color: var(--forest-dark) !important;
+}
+
+.bg-forest-medium {
+  background-color: var(--forest-medium) !important;
+}
+
+.bg-forest-light {
+  background-color: var(--forest-light) !important;
+}
+
+.bg-forest-ultralight {
+  background-color: var(--forest-ultralight) !important;
+}
+
+/* 連結 */
+a {
+  color: var(--forest-medium);
+  text-decoration: none;
+  transition: var(--transition-base);
+}
+
+a:hover {
+  color: var(--forest-dark);
+  text-decoration: underline;
+}
+
+/* 按鈕樣式覆蓋 */
+.btn-forest {
+  background-color: var(--forest-medium);
+  border-color: var(--forest-medium);
+  color: white;
+}
+
+.btn-forest:hover {
+  background-color: var(--forest-dark);
+  border-color: var(--forest-dark);
+  color: white;
+}
+
+.btn-outline-forest {
+  background-color: transparent;
+  border-color: var(--forest-medium);
+  color: var(--forest-medium);
+}
+
+.btn-outline-forest:hover {
+  background-color: var(--forest-medium);
+  color: white;
+}
+
+/* 表單元素 */
+.form-control:focus {
+  border-color: var(--forest-medium);
+  box-shadow: 0 0 0 0.25rem rgba(53, 102, 72, 0.25);
+}
+
+/* 卡片 */
+.card {
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition-base);
+}
+
+.card:hover {
+  box-shadow: var(--shadow);
+}
+
+/* 星級評分組件 */
+.rating-stars {
+  display: inline-flex;
+  align-items: center;
+}
+
+.rating-stars .star {
+  color: var(--accent-gold);
+  font-size: 1.2rem;
+  margin-right: 2px;
+}
+
+.rating-stars .star-empty {
+  color: var(--gray-300);
+}
+
+/* 評價清單 */
+.review-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4);
+}
+
+/* 分頁按鈕 */
+.pagination .page-link {
+  color: var(--forest-medium);
+}
+
+.pagination .page-item.active .page-link {
+  background-color: var(--forest-medium);
+  border-color: var(--forest-medium);
+  color: white;
+}
+
+/* 響應式調整 */
+@media (max-width: 768px) {
+  :root {
+    --font-size-base: 0.95rem;
+  }
+  
+  .card {
+    padding: var(--spacing-2);
+  }
+}
+
+/* 輔助類 */
+.required-field::after {
+  content: "*";
+  color: var(--danger);
+  margin-left: 4px;
+}
+
+.section-title {
+  position: relative;
+  padding-bottom: var(--spacing-2);
+  margin-bottom: var(--spacing-3);
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50px;
+  height: 3px;
+  background-color: var(--forest-medium);
+  border-radius: 1.5px;
+}
+
+/* 動畫 */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.animate-slide-up {
+  animation: slideUp 0.5s ease-out;
+}
